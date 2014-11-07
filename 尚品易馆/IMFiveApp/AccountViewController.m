@@ -13,7 +13,11 @@
 @end
 
 @implementation AccountViewController
-
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [self.webView removeFromSuperview];
+    [self initWebView];
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -24,7 +28,7 @@
 //        }
 //         return nil;
 //     }];
-    [self initWebView];
+//    [self initWebView];
 
 }
 
