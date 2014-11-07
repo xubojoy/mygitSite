@@ -34,10 +34,10 @@
          {
              
              UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
-             UIImage *i = [QHCommonUtil imageNamed:@"menu_icon_bulb.png"];
+             UIImage *i = [UIImage imageNamed:@"menu_icon_white"];
              [btn setImage:i forState:UIControlStateNormal];
-             [btn setFrame:CGRectMake(10, (self.navView.height - i.size.height)/2, i.size.width, i.size.height)];
-             [btn setImage:[QHCommonUtil imageNamed:@"menu_icon_bulb_pressed.png"] forState:UIControlStateSelected];
+             [btn setFrame:CGRectMake(10, (self.navView.height - i.size.height)/2+5, i.size.width, i.size.height)];
+             [btn setImage:[UIImage imageNamed:@"menu_icon_red"] forState:UIControlStateSelected];
              btn.tag = 989;
              [btn addTarget:self action:@selector(backAction:) forControlEvents:UIControlEventTouchUpInside];
              return btn;
@@ -58,12 +58,10 @@
     
     CGRect frame = self.webView.frame;
     if (IOS_6) {
-        self.webView.frame = CGRectMake(0, 44, 320, self.view.frame.size.height-44-49);
+        self.webView.frame = CGRectMake(0, 0, 320, self.view.frame.size.height);
     }
-    self.webView.frame = CGRectMake(0, 64, 320, self.view.frame.size.height-64-49);
-    
-//    frame.size.height = self.view.frame.size.height - self.navView.frame.size.height-20;
-//    frame.origin.y = [self.navView bottomY];
+    self.webView.frame = CGRectMake(0, 20, 320, self.view.frame.size.height-20);
+
     self.webView.frame = frame;
     
     self.activityIndicator.center = [UIApplication sharedApplication].keyWindow.center;

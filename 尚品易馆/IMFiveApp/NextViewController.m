@@ -31,10 +31,10 @@
          if (nIndex == 1)
          {
              UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
-             UIImage *i = [UIImage imageNamed:@"menu_icon_bulb.png"];
+             UIImage *i = [UIImage imageNamed:@"menu_icon_white"];
              [btn setImage:i forState:UIControlStateNormal];
-             [btn setFrame:CGRectMake(10, (self.navView.height - i.size.height)/2, i.size.width, i.size.height)];
-             [btn setImage:[UIImage imageNamed:@"menu_icon_bulb_pressed.png"] forState:UIControlStateSelected];
+             [btn setFrame:CGRectMake(10, (self.navView.height - i.size.height)/2+5, i.size.width, i.size.height)];
+             [btn setImage:[UIImage imageNamed:@"menu_icon_red"] forState:UIControlStateSelected];
              btn.tag = 989;
              [btn addTarget:self action:@selector(backAction:) forControlEvents:UIControlEventTouchUpInside];
              return btn;
@@ -52,9 +52,9 @@
 -(void) initWebView{
     self.webView = [[UIWebView alloc] init];
     if (IOS_6) {
-        self.webView.frame = CGRectMake(0, 44, 320, self.view.frame.size.height-44-49);
+        self.webView.frame = CGRectMake(0, 0, 320, self.view.frame.size.height);
     }
-    self.webView.frame = CGRectMake(0, 64, 320, self.view.frame.size.height-64-49);
+    self.webView.frame = CGRectMake(0, 20, 320, self.view.frame.size.height-20);
     self.activityIndicator = [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 32.0f, 32.0f)];
     [self.activityIndicator setCenter:self.webView.center];
     [self.activityIndicator setActivityIndicatorViewStyle:UIActivityIndicatorViewStyleGray];
@@ -69,6 +69,7 @@
     NSURLRequest *request =[NSURLRequest requestWithURL:nsurl];
     [self.webView loadRequest:request];
     [self.view addSubview:self.webView];
+    [self.view bringSubviewToFront:self.navView];
 }
 
 -(void)webViewDidStartLoad:(UIWebView *)webView{

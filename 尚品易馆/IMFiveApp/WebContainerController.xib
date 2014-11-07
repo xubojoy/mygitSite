@@ -18,7 +18,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <webView contentMode="scaleToFill" id="Dm6-13-S8a">
-                    <rect key="frame" x="0.0" y="44" width="400" height="536"/>
+                    <rect key="frame" x="0.0" y="0.0" width="400" height="568"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </webView>
@@ -28,7 +28,7 @@
                 </activityIndicatorView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-            <point key="canvasLocation" x="411" y="264"/>
+            <point key="canvasLocation" x="352" y="263"/>
         </view>
     </objects>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

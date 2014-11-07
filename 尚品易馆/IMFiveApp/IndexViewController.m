@@ -48,10 +48,10 @@
          if (nIndex == 1)
          {
              UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
-             UIImage *i = [UIImage imageNamed:@"nav_menu_icon"];
+             UIImage *i = [UIImage imageNamed:@"menu_icon_white"];
              [btn setImage:i forState:UIControlStateNormal];
-             [btn setFrame:CGRectMake(10, (self.navView.height - i.size.height)/2, i.size.width, i.size.height)];
-             [btn setImage:[UIImage imageNamed:@"nav_menu_icon"] forState:UIControlStateSelected];
+             [btn setFrame:CGRectMake(10, (self.navView.height - i.size.height)/2+5, i.size.width, i.size.height)];
+             [btn setImage:[UIImage imageNamed:@"menu_icon_red"] forState:UIControlStateSelected];
              btn.tag = 989;
              [btn addTarget:self action:@selector(showLeft:) forControlEvents:UIControlEventTouchUpInside];
              return btn;
@@ -60,10 +60,10 @@
      }];
     
     UIButton *btn1 = [UIButton buttonWithType:UIButtonTypeCustom];
-    UIImage *i = [UIImage imageNamed:@"nav_menu_icon"];
+    UIImage *i = [UIImage imageNamed:@"search_wbg"];
     [btn1 setImage:i forState:UIControlStateNormal];
-    [btn1 setFrame:CGRectMake(290, (self.navView.height - i.size.height)/2, i.size.width, i.size.height)];
-    [btn1 setImage:[UIImage imageNamed:@"nav_menu_icon"] forState:UIControlStateSelected];
+    [btn1 setFrame:CGRectMake(290, (self.navView.height - i.size.height)/2+7, 20, 20)];
+    [btn1 setImage:[UIImage imageNamed:@"search_bg"] forState:UIControlStateSelected];
     btn1.tag = 1000;
     [btn1 addTarget:self action:@selector(searchBtnClick:) forControlEvents:UIControlEventTouchUpInside];
     [self.navView addSubview:btn1];
