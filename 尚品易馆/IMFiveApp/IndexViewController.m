@@ -23,6 +23,12 @@
 
 @implementation IndexViewController
 
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [self.webView removeFromSuperview];
+    [self initWebView];
+}
+
 - (void)viewDidDisappear:(BOOL)animated
 {
     UIButton *btn = (UIButton *)self.rightV;
@@ -80,7 +86,7 @@
     
     UITapGestureRecognizer *tSM = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(showMenuByTap:)];
     [bg addGestureRecognizer:tSM];
-    [self initWebView];
+//    [self initWebView];
 }
 
 -(void) initWebView{

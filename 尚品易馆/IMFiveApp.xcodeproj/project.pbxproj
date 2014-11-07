@@ -227,7 +227,6 @@
 			isa = PBXGroup;
 			children = (
 				A8FC06DA1A086BF6000FAD59 /* 引导页 */,
-				A82EDE9319FE4FA1004EFFA7 /* store */,
 				A82EDE9219FE4DDC004EFFA7 /* domain */,
 				A82EDE8D19FE4361004EFFA7 /* ui */,
 				744EE9D219A4C76400941E50 /* resource */,
@@ -357,13 +356,6 @@
 				A82EDE7419FE3930004EFFA7 /* Constant.h */,
 			);
 			name = domain;
-			sourceTree = "<group>";
-		};
-		A82EDE9319FE4FA1004EFFA7 /* store */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = store;
 			sourceTree = "<group>";
 		};
 		A8A87AAA1A0A2B1500251CE9 /* QHUtills */ = {
