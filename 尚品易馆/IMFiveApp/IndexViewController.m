@@ -48,10 +48,10 @@
          if (nIndex == 1)
          {
              UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
-             UIImage *i = [QHCommonUtil imageNamed:@"nav_menu_icon"];
+             UIImage *i = [UIImage imageNamed:@"nav_menu_icon"];
              [btn setImage:i forState:UIControlStateNormal];
              [btn setFrame:CGRectMake(10, (self.navView.height - i.size.height)/2, i.size.width, i.size.height)];
-             [btn setImage:[QHCommonUtil imageNamed:@"nav_menu_icon"] forState:UIControlStateSelected];
+             [btn setImage:[UIImage imageNamed:@"nav_menu_icon"] forState:UIControlStateSelected];
              btn.tag = 989;
              [btn addTarget:self action:@selector(showLeft:) forControlEvents:UIControlEventTouchUpInside];
              return btn;
@@ -60,10 +60,10 @@
      }];
     
     UIButton *btn1 = [UIButton buttonWithType:UIButtonTypeCustom];
-    UIImage *i = [QHCommonUtil imageNamed:@"nav_menu_icon"];
+    UIImage *i = [UIImage imageNamed:@"nav_menu_icon"];
     [btn1 setImage:i forState:UIControlStateNormal];
     [btn1 setFrame:CGRectMake(290, (self.navView.height - i.size.height)/2, i.size.width, i.size.height)];
-    [btn1 setImage:[QHCommonUtil imageNamed:@"nav_menu_icon"] forState:UIControlStateSelected];
+    [btn1 setImage:[UIImage imageNamed:@"nav_menu_icon"] forState:UIControlStateSelected];
     btn1.tag = 1000;
     [btn1 addTarget:self action:@selector(searchBtnClick:) forControlEvents:UIControlEventTouchUpInside];
     [self.navView addSubview:btn1];

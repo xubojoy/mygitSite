@@ -31,10 +31,10 @@
          if (nIndex == 1)
          {
              UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
-             UIImage *i = [QHCommonUtil imageNamed:@"menu_icon_bulb.png"];
+             UIImage *i = [UIImage imageNamed:@"menu_icon_bulb.png"];
              [btn setImage:i forState:UIControlStateNormal];
              [btn setFrame:CGRectMake(10, (self.navView.height - i.size.height)/2, i.size.width, i.size.height)];
-             [btn setImage:[QHCommonUtil imageNamed:@"menu_icon_bulb_pressed.png"] forState:UIControlStateSelected];
+             [btn setImage:[UIImage imageNamed:@"menu_icon_bulb_pressed.png"] forState:UIControlStateSelected];
              btn.tag = 989;
              [btn addTarget:self action:@selector(backAction:) forControlEvents:UIControlEventTouchUpInside];
              return btn;

@@ -98,17 +98,17 @@
 
 - (void)reloadImage
 {
-    NSString *imageName = nil;
-    if (isIos7 >= 7 && __IPHONE_OS_VERSION_MAX_ALLOWED > __IPHONE_6_1)
-    {
-        imageName = @"header_bg_ios7.png";
-    }else
-    {
-        imageName = @"header_bg.png";
-    }
-    UIImage *image = [QHCommonUtil imageNamed:imageName];
-    UIImageView *navIV = (UIImageView *)[self.view viewWithTag:98];
-    [navIV setImage:image];
+//    NSString *imageName = nil;
+//    if (isIos7 >= 7 && __IPHONE_OS_VERSION_MAX_ALLOWED > __IPHONE_6_1)
+//    {
+//        imageName = @"header_bg_ios7.png";
+//    }else
+//    {
+//        imageName = @"header_bg.png";
+//    }
+//    UIImage *image = [QHCommonUtil imageNamed:imageName];
+//    UIImageView *navIV = (UIImageView *)[self.view viewWithTag:98];
+//    [navIV setImage:image];
 }
 
 - (void)observerReloadImage:(NSNotificationCenter *)notif

@@ -23,4 +23,3 @@
 
 #endif
 
-#import "QHConfiguredObj.h"

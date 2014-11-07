@@ -28,7 +28,7 @@
     NSMutableArray *grouparr;
     NSMutableDictionary *totalDic;
 }
-
+@property (nonatomic, strong) UIImageView *imageV;
 @end
 
 @implementation LeftViewController
@@ -41,21 +41,21 @@
     
     [self.view setBackgroundColor:[UIColor clearColor]];
     
-//    UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 320, self.view.frame.size.height)];
-//    imageView.image = [UIImage imageNamed:@"1"];
-//    
-//    [self.view addSubview:imageView];
+    UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 320, self.view.frame.size.height)];
+    imageView.image = [UIImage imageNamed:@"left_bg"];
+    
+    [self.view addSubview:imageView];
     self.view.backgroundColor = [UIColor blackColor];
     selectedArr = [[NSMutableArray alloc] init];
     resultArray = [[NSArray alloc] init];
     nameDataArray = [[NSMutableArray alloc] init];
     childrenArray = [[NSMutableArray alloc] init];
-    imageArray = [[NSMutableArray alloc] init];
+    imageArray = [[NSMutableArray alloc] initWithObjects:@"1",@"2",@"3",@"4",@"5", nil];
     nameUrlArray = [[NSMutableArray alloc] init];
     grouparr = [[NSMutableArray alloc] init];
     
     //tableView
-    _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 130, 320,SCREEN_HEIGHT) style:UITableViewStylePlain];
+      _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 45, 320,SCREEN_HEIGHT) style:UITableViewStylePlain];
     _tableView.delegate = self;
     _tableView.dataSource = self;
     _tableView.showsVerticalScrollIndicator = NO;
@@ -80,7 +80,7 @@
         
         resultArray = [dataDict objectForKey:@"result"];
         for (NSDictionary *resultDict in resultArray ) {
-            [imageArray addObject:[resultDict objectForKey:@"img_url"]];
+//            [imageArray addObject:[resultDict objectForKey:@"img_url"]];
             [nameUrlArray addObject:[resultDict objectForKey:@"url"]];
             [nameDataArray addObject:[resultDict objectForKey:@"name"]];
             [childrenArray addObject:[resultDict objectForKey:@"children"]];
@@ -153,24 +153,24 @@
     UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 40)];
     view.backgroundColor = [UIColor clearColor];
     
-    NSString *imageUrl = [imageArray objectAtIndex:section];
+    NSString *imageStr = [imageArray objectAtIndex:section];
     
-    UIImage* image=nil;
-    NSURL* url = [NSURL URLWithString:[imageUrl stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];//网络图片url
-    NSData* data = [NSData dataWithContentsOfURL:url];//获取网咯图片数据
-    if(data!=nil)
-    {
-        image = [[UIImage alloc] initWithData:data];//根据图片数据流构造image
-    }
-    CGSize size = CGSizeMake(20, 20);
-    UIGraphicsBeginImageContext(size);
-    // 绘制改变大小的图片
-    [image drawInRect:CGRectMake(0, 0, size.width, size.height)];
-    // 从当前context中创建一个改变大小后的图片
-    UIImage* scaledImage = UIGraphicsGetImageFromCurrentImageContext();
-    // 使当前的context出堆栈
-    UIGraphicsEndImageContext();
-    
+//    UIImage* image=nil;
+//    NSURL* url = [NSURL URLWithString:[imageUrl stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];//网络图片url
+//    NSData* data = [NSData dataWithContentsOfURL:url];//获取网咯图片数据
+//    if(data!=nil)
+//    {
+//        image = [[UIImage alloc] initWithData:data];//根据图片数据流构造image
+//    }
+//    CGSize size = CGSizeMake(20, 20);
+//    UIGraphicsBeginImageContext(size);
+//    // 绘制改变大小的图片
+//    [image drawInRect:CGRectMake(0, 0, size.width, size.height)];
+//    // 从当前context中创建一个改变大小后的图片
+//    UIImage* scaledImage = UIGraphicsGetImageFromCurrentImageContext();
+//    // 使当前的context出堆栈
+//    UIGraphicsEndImageContext();
+//    
     UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
     btn.frame = CGRectMake(0, 0, 223, 39.5);
     btn.imageEdgeInsets = UIEdgeInsetsMake(0, 20, 0, 100);
@@ -179,18 +179,23 @@
     btn.titleLabel.font = [UIFont boldSystemFontOfSize:20];
     btn.titleEdgeInsets = UIEdgeInsetsMake(0, -50, 0, 0);
     [btn setTitle:[nameDataArray objectAtIndex:section] forState:UIControlStateNormal];
-    [btn setImage:scaledImage forState:UIControlStateNormal];
+    [btn setImage:[UIImage imageNamed:imageStr] forState:UIControlStateNormal];
     [btn addTarget:self action:@selector(pushBtnClick:) forControlEvents:UIControlEventTouchUpInside];
     btn.tag = section;
     [view addSubview:btn];
     
     UIButton *btn1 = [UIButton buttonWithType:UIButtonTypeCustom];
     btn1.frame = CGRectMake(222, 0, 39.5, 39.5);
-    [btn1 setImage:[UIImage imageNamed:@"table_arrow_press"] forState:UIControlStateNormal];
+    [btn1 setImage:[UIImage imageNamed:@"push_btn_bg"] forState:UIControlStateNormal];
     btn1.tag = 100+section;
 //     btn1.backgroundColor = [UIColor redColor];
     [btn1 addTarget:self action:@selector(doButton:) forControlEvents:UIControlEventTouchUpInside];
     [view addSubview:btn1];
+    
+    self.imageV = [[UIImageView alloc] initWithFrame:CGRectMake(55, 40, 300, 1)];
+    self.imageV.backgroundColor = [UIColor clearColor];
+    self.imageV.image = [UIImage imageNamed:@"left_line"];
+    [view addSubview:self.imageV];
     
     return view;
 }

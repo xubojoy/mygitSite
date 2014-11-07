@@ -70,23 +70,23 @@
     }
 }
 
-+ (UIImage *)imageNamed:(NSString *)name
-{
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString *documentsDirectory = [paths objectAtIndex:0];
-    
-    UIImage *image = nil;
-    if ([QHConfiguredObj defaultConfigure].themefold != nil && [QHConfiguredObj defaultConfigure].themefold.length > 0)
-    {
-        NSString *path = [[documentsDirectory stringByAppendingPathComponent:[QHConfiguredObj defaultConfigure].themefold] stringByAppendingPathComponent:name];
-        image = [UIImage imageWithContentsOfFile:path];
-    }
-    if (image == nil)
-    {
-        image = [UIImage imageNamed:name];
-    }
-    
-    return image;
-}
+//+ (UIImage *)imageNamed:(NSString *)name
+//{
+//    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+//    NSString *documentsDirectory = [paths objectAtIndex:0];
+//    
+//    UIImage *image = nil;
+//    if ([QHConfiguredObj defaultConfigure].themefold != nil && [QHConfiguredObj defaultConfigure].themefold.length > 0)
+//    {
+//        NSString *path = [[documentsDirectory stringByAppendingPathComponent:[QHConfiguredObj defaultConfigure].themefold] stringByAppendingPathComponent:name];
+//        image = [UIImage imageWithContentsOfFile:path];
+//    }
+//    if (image == nil)
+//    {
+//        image = [UIImage imageNamed:name];
+//    }
+//    
+//    return image;
+//}
 
 @end

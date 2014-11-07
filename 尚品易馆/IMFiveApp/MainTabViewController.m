@@ -8,7 +8,6 @@
 
 #import "MainTabViewController.h"
 #import "QHCommonUtil.h"
-#import "QHConfiguredObj.h"
 #import "IndexViewController.h"
 #import "ClassifyViewController.h"
 #import "ShoppingViewController.h"
@@ -70,16 +69,16 @@ static MainTabViewController *main;
 {
     [super reloadImage];
     
-    NSString *imageName = nil;
-    if (IOS_7 && __IPHONE_OS_VERSION_MAX_ALLOWED > __IPHONE_6_1 && [QHConfiguredObj defaultConfigure].nThemeIndex != 0)
-    {
-        imageName = @"tabbar_bg_ios7.png";
-    }else
-    {
-        imageName = @"tabbar_bg.png";
-    }
-    [_tabC.tabBar setBackgroundImage:[QHCommonUtil imageNamed:imageName]];
-    
+//    NSString *imageName = nil;
+//    if (IOS_7 && __IPHONE_OS_VERSION_MAX_ALLOWED > __IPHONE_6_1 && [QHConfiguredObj defaultConfigure].nThemeIndex != 0)
+//    {
+//        imageName = @"tabbar_bg_ios7.png";
+//    }else
+//    {
+//        imageName = @"tabbar_bg.png";
+//    }
+//    [_tabC.tabBar setBackgroundImage:[QHCommonUtil imageNamed:imageName]];
+    [_tabC.tabBar setBackgroundImage:[UIImage imageNamed:@"tabbar_bg"]];
     NSArray *ar = _tabC.viewControllers;
     NSMutableArray *arD = [NSMutableArray new];
     [ar enumerateObjectsUsingBlock:^(UIViewController *viewController, NSUInteger idx, BOOL *stop)
@@ -90,38 +89,38 @@ static MainTabViewController *main;
         {
             case 0:
             {
-                item = [[UITabBarItem alloc] initWithTitle:@"主页" image:[[QHCommonUtil imageNamed:@"tab_recent_nor.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] selectedImage:[[QHCommonUtil imageNamed:@"tab_recent_press.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+                item = [[UITabBarItem alloc] initWithTitle:@"主页" image:[[UIImage imageNamed:@"index_item_wbg"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] selectedImage:[[UIImage imageNamed:@"index_item_bg"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
                 break;
             }
             case 1:
             {
                 item = [[UITabBarItem alloc] initWithTitle:@"分类" image:nil tag:1];
-                [item setImage:[[QHCommonUtil imageNamed:@"tab_buddy_nor.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
-                [item setSelectedImage:[[QHCommonUtil imageNamed:@"tab_buddy_press.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+                [item setImage:[[UIImage imageNamed:@"classify_item_wbg"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+                [item setSelectedImage:[[UIImage imageNamed:@"classify_item_bg"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
                 break;
             }
             case 2:
             {
                 item = [[UITabBarItem alloc]initWithTitle:@"购物" image:nil tag:1];
-                [item setImage:[[QHCommonUtil imageNamed:@"tab_qworld_nor.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
-                [item setSelectedImage:[[QHCommonUtil imageNamed:@"tab_qworld_press.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+                [item setImage:[[UIImage imageNamed:@"shopping_item_wbg"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+                [item setSelectedImage:[[UIImage imageNamed:@"shopping_item_bg"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
                 break;
             }
             case 3:
             {
                 item = [[UITabBarItem alloc] initWithTitle:@"账户" image:nil tag:1];
-                [item setImage:[[QHCommonUtil imageNamed:@"tab_buddy_nor.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
-                [item setSelectedImage:[[QHCommonUtil imageNamed:@"tab_buddy_press.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+                [item setImage:[[UIImage imageNamed:@"account_item_wbg"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+                [item setSelectedImage:[[UIImage imageNamed:@"account_item_bg"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
                 break;
             }
             case 4:
             {
                 item = [[UITabBarItem alloc]initWithTitle:@"客服" image:nil tag:1];
-                [item setImage:[[QHCommonUtil imageNamed:@"tab_qworld_nor.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
-                [item setSelectedImage:[[QHCommonUtil imageNamed:@"tab_qworld_press.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+                [item setImage:[[UIImage imageNamed:@"feed_back_item_wbg"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+                [item setSelectedImage:[[UIImage imageNamed:@"feed_back_item_bg"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
                 break;
             }
-
+                
         }
         viewController.tabBarItem = item;
         [arD addObject:viewController];
