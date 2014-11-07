@@ -43,21 +43,7 @@
     
     [self addObserver];
     
-    [self createNavWithTitle:@"主页" createMenuItem:^UIView *(int nIndex)
-     {
-         if (nIndex == 1)
-         {
-             UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
-             UIImage *i = [UIImage imageNamed:@"menu_icon_white"];
-             [btn setImage:i forState:UIControlStateNormal];
-             [btn setFrame:CGRectMake(10, (self.navView.height - i.size.height)/2+5, i.size.width, i.size.height)];
-             [btn setImage:[UIImage imageNamed:@"menu_icon_red"] forState:UIControlStateSelected];
-             btn.tag = 989;
-             [btn addTarget:self action:@selector(showLeft:) forControlEvents:UIControlEventTouchUpInside];
-             return btn;
-         }
-         return nil;
-     }];
+    
     
     UIButton *btn1 = [UIButton buttonWithType:UIButtonTypeCustom];
     UIImage *i = [UIImage imageNamed:@"search_wbg"];
