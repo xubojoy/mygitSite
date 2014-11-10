@@ -11,9 +11,15 @@
 // 发布代码于最专业的源码分享网站: Code4App.com
 
 #import <UIKit/UIKit.h>
+#import "Reachability.h"
+#import "NetProcessor.h"
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+@interface AppDelegate : UIResponder <UIApplicationDelegate>{
+
+     Reachability *hostReach;
+}
 
 @property (strong, nonatomic) UIWindow *window;
+@property (nonatomic, strong) NetProcessor *netProcessor;
 
 @end
