@@ -44,18 +44,18 @@
     
     UIImageView *imageview1=[[UIImageView alloc]initWithFrame:CGRectMake(0,0, 320, CGRectGetHeight(scrollview.frame))];
     
-    [imageview1 setImage:[UIImage imageNamed:@"1"]];
+    [imageview1 setImage:[UIImage imageNamed:@"scroll_1"]];
     imageview1.backgroundColor = GXRandomColor;
     [scrollview addSubview:imageview1];
     
     UIImageView*imageview2=[[UIImageView alloc]initWithFrame:CGRectMake(320, 0, 320, CGRectGetHeight(scrollview.bounds))];
-    [imageview2 setImage:[UIImage imageNamed:@"2"]];
+    [imageview2 setImage:[UIImage imageNamed:@"scroll_2"]];
     imageview2.backgroundColor = GXRandomColor;
     
     [scrollview addSubview:imageview2];
     
     UIImageView*imageview3=[[UIImageView alloc]initWithFrame:CGRectMake(640, 0, 320, CGRectGetHeight(scrollview.frame))];
-    [imageview3 setImage:[UIImage imageNamed:@"3"]];
+    [imageview3 setImage:[UIImage imageNamed:@"scroll_3"]];
     imageview3.backgroundColor =GXRandomColor;
     [scrollview addSubview:imageview3];
 
