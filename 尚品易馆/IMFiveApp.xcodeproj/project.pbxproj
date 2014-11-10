@@ -30,6 +30,8 @@
 		7430609319A4849B00D3625F /* MainTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7430608C19A4849B00D3625F /* MainTabViewController.m */; };
 		7430609419A4849B00D3625F /* IndexViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7430608E19A4849B00D3625F /* IndexViewController.m */; };
 		74597FCD19B1CBF000C9737E /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 74597FCC19B1CBF000C9737E /* libz.dylib */; };
+		A85A1D6B1A106EB4007AA77D /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = A85A1D6A1A106EB4007AA77D /* Reachability.m */; };
+		A85A1D721A107187007AA77D /* NetProcessor.m in Sources */ = {isa = PBXBuildFile; fileRef = A85A1D711A107187007AA77D /* NetProcessor.m */; };
 		A8A87ABB1A0A2B1500251CE9 /* QHCommonUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = A8A87AAC1A0A2B1500251CE9 /* QHCommonUtil.m */; };
 		A8B50C991A0CC56600DC2DEA /* account_item_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A8B50C7F1A0CC56600DC2DEA /* account_item_bg@2x.png */; };
 		A8B50C9A1A0CC56600DC2DEA /* account_item_wbg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A8B50C801A0CC56600DC2DEA /* account_item_wbg@2x.png */; };
@@ -118,6 +120,10 @@
 		7430608E19A4849B00D3625F /* IndexViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IndexViewController.m; sourceTree = "<group>"; };
 		74597FCC19B1CBF000C9737E /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		A82EDE7419FE3930004EFFA7 /* Constant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constant.h; sourceTree = "<group>"; };
+		A85A1D691A106EB4007AA77D /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Reachability.h; path = third/Reachability.h; sourceTree = "<group>"; };
+		A85A1D6A1A106EB4007AA77D /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Reachability.m; path = third/Reachability.m; sourceTree = "<group>"; };
+		A85A1D701A107187007AA77D /* NetProcessor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NetProcessor.h; path = Processor/NetProcessor.h; sourceTree = "<group>"; };
+		A85A1D711A107187007AA77D /* NetProcessor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NetProcessor.m; path = Processor/NetProcessor.m; sourceTree = "<group>"; };
 		A8A87AAB1A0A2B1500251CE9 /* QHCommonUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QHCommonUtil.h; sourceTree = "<group>"; };
 		A8A87AAC1A0A2B1500251CE9 /* QHCommonUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QHCommonUtil.m; sourceTree = "<group>"; };
 		A8A87AAF1A0A2B1500251CE9 /* QHViewTag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QHViewTag.h; sourceTree = "<group>"; };
@@ -226,6 +232,7 @@
 		7430604019A44EEB00D3625F /* IMFiveApp */ = {
 			isa = PBXGroup;
 			children = (
+				A85A1D6C1A107095007AA77D /* processor */,
 				A8FC06DA1A086BF6000FAD59 /* 引导页 */,
 				A82EDE9219FE4DDC004EFFA7 /* domain */,
 				A82EDE8D19FE4361004EFFA7 /* ui */,
@@ -343,6 +350,8 @@
 		A82EDE8E19FE4381004EFFA7 /* third */ = {
 			isa = PBXGroup;
 			children = (
+				A85A1D691A106EB4007AA77D /* Reachability.h */,
+				A85A1D6A1A106EB4007AA77D /* Reachability.m */,
 				7430606C19A4516C00D3625F /* MLTransition */,
 				A8A87AAA1A0A2B1500251CE9 /* QHUtills */,
 			);
@@ -356,6 +365,15 @@
 				A82EDE7419FE3930004EFFA7 /* Constant.h */,
 			);
 			name = domain;
+			sourceTree = "<group>";
+		};
+		A85A1D6C1A107095007AA77D /* processor */ = {
+			isa = PBXGroup;
+			children = (
+				A85A1D701A107187007AA77D /* NetProcessor.h */,
+				A85A1D711A107187007AA77D /* NetProcessor.m */,
+			);
+			name = processor;
 			sourceTree = "<group>";
 		};
 		A8A87AAA1A0A2B1500251CE9 /* QHUtills */ = {
@@ -553,6 +571,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A85A1D721A107187007AA77D /* NetProcessor.m in Sources */,
 				7430609119A4849B00D3625F /* ClassifyViewController.m in Sources */,
 				A8FC07341A08BFCE000FAD59 /* UIView+Custom.m in Sources */,
 				7430607819A4516D00D3625F /* LeftViewController.m in Sources */,
@@ -563,6 +582,7 @@
 				7430609419A4849B00D3625F /* IndexViewController.m in Sources */,
 				7430609219A4849B00D3625F /* ShoppingViewController.m in Sources */,
 				A8FC07371A09D7BB000FAD59 /* SearchViewController.m in Sources */,
+				A85A1D6B1A106EB4007AA77D /* Reachability.m in Sources */,
 				A8FC07301A08BD85000FAD59 /* WebContainerController.m in Sources */,
 				A8FC06E41A087792000FAD59 /* FeedBackViewController.m in Sources */,
 				7430608219A4522100D3625F /* QHBasicViewController.m in Sources */,
