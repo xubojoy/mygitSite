@@ -68,22 +68,12 @@ static MainTabViewController *main;
 - (void)reloadImage
 {
     [super reloadImage];
-    
-//    NSString *imageName = nil;
-//    if (IOS_7 && __IPHONE_OS_VERSION_MAX_ALLOWED > __IPHONE_6_1 && [QHConfiguredObj defaultConfigure].nThemeIndex != 0)
-//    {
-//        imageName = @"tabbar_bg_ios7.png";
-//    }else
-//    {
-//        imageName = @"tabbar_bg.png";
-//    }
-//    [_tabC.tabBar setBackgroundImage:[QHCommonUtil imageNamed:imageName]];
+
     [_tabC.tabBar setBackgroundImage:[UIImage imageNamed:@"tabbar_bg"]];
     NSArray *ar = _tabC.viewControllers;
     NSMutableArray *arD = [NSMutableArray new];
     [ar enumerateObjectsUsingBlock:^(UIViewController *viewController, NSUInteger idx, BOOL *stop)
     {
-//        UITabBarItem *item = viewController.tabBarItem;
         UITabBarItem *item = nil;
         switch (idx)
         {
