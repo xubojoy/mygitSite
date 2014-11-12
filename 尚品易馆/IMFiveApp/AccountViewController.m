@@ -21,23 +21,23 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-//    [self createNavWithTitle:@"账户" createMenuItem:^UIView *(int nIndex)
-//     {
-//         if (nIndex == 1)
-//         {
-//        }
-//         return nil;
-//     }];
-//    [self initWebView];
+    [self createNavWithTitle:@"尚品易馆" createMenuItem:^UIView *(int nIndex)
+     {
+         if (nIndex == 1)
+         {
+        }
+         return nil;
+     }];
+//[self initWebView];
 
 }
 
 -(void) initWebView{
     self.webView = [[UIWebView alloc] init];
     if (IOS_6) {
-        self.webView.frame = CGRectMake(0, 0, 320, self.view.frame.size.height-49);
+        self.webView.frame = CGRectMake(0, 44, 320, self.view.frame.size.height-44-49);
     }
-    self.webView.frame = CGRectMake(0, 20, 320, self.view.frame.size.height-20-49);
+    self.webView.frame = CGRectMake(0, 64, 320, self.view.frame.size.height-64-49);
     
     self.activityIndicator = [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 32.0f, 32.0f)];
     [self.activityIndicator setCenter:self.webView.center];

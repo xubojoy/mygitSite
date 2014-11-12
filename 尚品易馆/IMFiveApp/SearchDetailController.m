@@ -1,18 +1,19 @@
 //
-//  NextViewController.m
+//  SearchDetailController.m
 //  IMFiveApp
 //
-//  Created by 王圆圆 on 14-11-4.
+//  Created by myStyle on 14-11-11.
 //  Copyright (c) 2014年 chen. All rights reserved.
 //
 
-#import "NextViewController.h"
+#import "SearchDetailController.h"
 #import "SliderViewController.h"
-@interface NextViewController ()
+#import "SearchViewController.h"
+@interface SearchDetailController ()
 
 @end
 
-@implementation NextViewController
+@implementation SearchDetailController
 
 -(id) initWithUrl:(NSString *)url title:(NSString *)title{
     self = [self init];
@@ -23,11 +24,11 @@
     return self;
 }
 
--(void)viewWillAppear:(BOOL)animated{
-    [super viewWillAppear:animated];
-    [self.webView removeFromSuperview];
-    [self initWebView];
-}
+//-(void)viewWillAppear:(BOOL)animated{
+//    [super viewWillAppear:animated];
+//    [self.webView removeFromSuperview];
+//    [self initWebView];
+//}
 - (void) viewDidLoad
 {
     [super viewDidLoad];
@@ -41,7 +42,7 @@
              [btn setFrame:CGRectMake(0, (self.navView.height - i.size.height)/2-10, i.size.width+40, i.size.height+35)];
              btn.imageEdgeInsets = UIEdgeInsetsMake(0, 5, 0, 25);
              [btn setImage:[UIImage imageNamed:@"menu_icon_red"] forState:UIControlStateSelected];
-
+             
              btn.tag = 989;
              [btn addTarget:self action:@selector(backAction:) forControlEvents:UIControlEventTouchUpInside];
              return btn;
@@ -49,11 +50,11 @@
          return nil;
      }];
     
-//[self initWebView];
+    [self initWebView];
 }
 - (void)backAction:(UIButton *)btn
 {
-    [[SliderViewController sharedSliderController].navigationController popToRootViewControllerAnimated:YES];
+    [[SliderViewController sharedSliderController].navigationController popViewControllerAnimated:YES];
 }
 
 -(void) initWebView{
@@ -70,7 +71,7 @@
     [self.webView setBackgroundColor:[UIColor clearColor]];
     [self.webView setOpaque:NO];
     self.webView.scrollView.decelerationRate = 0.8;
-    
+    NSLog(@">>>>>>>>self.url>>>>>>%@",self.url);
     [self.webView setDelegate:self];
     NSURL *nsurl =[NSURL URLWithString:self.url];
     NSURLRequest *request =[NSURLRequest requestWithURL:nsurl];
@@ -96,23 +97,8 @@
 }
 
 -(void) webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error{
-    NSLog(@">>>> web load error:%@", webView.request.URL);
+    NSLog(@">>>> web load error:%@", error.description);
     
 }
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

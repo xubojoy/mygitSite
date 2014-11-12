@@ -63,13 +63,15 @@
     
     /* { 导航条 } */
     _navView = [[UIImageView alloc] initWithFrame:CGRectMake(0.f, 0, 320, 64.f)];
-    ((UIImageView *)_navView).backgroundColor = RGBACOLOR(238.f, 66.f, 60.f, 1);;
+    ((UIImageView *)_navView).backgroundColor = RGBACOLOR(238.f, 66.f, 60.f, 1);
     [self.view addSubview:_navView];
     _navView.userInteractionEnabled = YES;
     
+    NSLog(@">>>>>_navView.height>>>>>>>%f",_navView.height);
+    
     if (szTitle != nil)
     {
-        UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake((_navView.width - 200)/2, (_navView.height - 40)/2, 200, 40)];
+        UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake((_navView.width - 200)/2, (_navView.height - 40)/2+7, 200, 40)];
         [titleLabel setText:szTitle];
         [titleLabel setTextAlignment:NSTextAlignmentCenter];
         [titleLabel setTextColor:[UIColor whiteColor]];

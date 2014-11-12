@@ -21,7 +21,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    [self createNavWithTitle:@"客服" createMenuItem:^UIView *(int nIndex)
+    [self createNavWithTitle:@"尚品易馆" createMenuItem:^UIView *(int nIndex)
      {
          if (nIndex == 1)
          {

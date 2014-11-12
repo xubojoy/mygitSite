@@ -8,7 +8,6 @@
 
 #import "IndexViewController.h"
 #import "MainTabViewController.h"
-//#import "RectViewForMessage.h"
 #import "SearchViewController.h"
 
 @interface IndexViewController ()
@@ -41,6 +40,7 @@
              [btn setUserInteractionEnabled:YES];
          }];
     }
+   
 }
 
 - (void)viewDidLoad
@@ -49,14 +49,15 @@
     
     [self addObserver];
     
-    [self createNavWithTitle:@"主页" createMenuItem:^UIView *(int nIndex)
+    [self createNavWithTitle:@"尚品易馆" createMenuItem:^UIView *(int nIndex)
      {
          if (nIndex == 1)
          {
              UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
              UIImage *i = [UIImage imageNamed:@"menu_icon_white"];
              [btn setImage:i forState:UIControlStateNormal];
-             [btn setFrame:CGRectMake(10, (self.navView.height - i.size.height)/2+5, i.size.width, i.size.height)];
+             [btn setFrame:CGRectMake(0, (self.navView.height - i.size.height)/2-10, i.size.width+40, i.size.height+35)];
+             btn.imageEdgeInsets = UIEdgeInsetsMake(0, 5, 0, 25);
              [btn setImage:[UIImage imageNamed:@"menu_icon_red"] forState:UIControlStateSelected];
              btn.tag = 989;
              [btn addTarget:self action:@selector(showLeft:) forControlEvents:UIControlEventTouchUpInside];
@@ -68,8 +69,9 @@
     UIButton *btn1 = [UIButton buttonWithType:UIButtonTypeCustom];
     UIImage *i = [UIImage imageNamed:@"search_wbg"];
     [btn1 setImage:i forState:UIControlStateNormal];
-    [btn1 setFrame:CGRectMake(290, (self.navView.height - i.size.height)/2+7, 20, 20)];
+    [btn1 setFrame:CGRectMake(260, (self.navView.height - i.size.height)/2-10, i.size.width+35, i.size.height+35)];
     [btn1 setImage:[UIImage imageNamed:@"search_bg"] forState:UIControlStateSelected];
+    btn1.imageEdgeInsets = UIEdgeInsetsMake(0, 25, 0, 5);
     btn1.tag = 1000;
     [btn1 addTarget:self action:@selector(searchBtnClick:) forControlEvents:UIControlEventTouchUpInside];
     [self.navView addSubview:btn1];
@@ -87,6 +89,11 @@
     UITapGestureRecognizer *tSM = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(showMenuByTap:)];
     [bg addGestureRecognizer:tSM];
 //    [self initWebView];
+}
+
+-(void)reloadWebView{
+    [self.webView reload];
+
 }
 
 -(void) initWebView{

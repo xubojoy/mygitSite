@@ -42,8 +42,10 @@
              UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
              UIImage *i = [UIImage imageNamed:@"menu_icon_white"];
              [btn setImage:i forState:UIControlStateNormal];
-             [btn setFrame:CGRectMake(10, (self.navView.height - i.size.height)/2+5, i.size.width, i.size.height)];
+             [btn setFrame:CGRectMake(0, (self.navView.height - i.size.height)/2-10, i.size.width+40, i.size.height+35)];
+             btn.imageEdgeInsets = UIEdgeInsetsMake(0, 5, 0, 25);
              [btn setImage:[UIImage imageNamed:@"menu_icon_red"] forState:UIControlStateSelected];
+
              btn.tag = 989;
              [btn addTarget:self action:@selector(backAction:) forControlEvents:UIControlEventTouchUpInside];
              return btn;

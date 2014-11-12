@@ -25,30 +25,15 @@
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
     
-    
-    
-//    //开启网络状况的监听
-//    [[NSNotificationCenter defaultCenter] addObserver:self
-//                                             selector:@selector(reachabilityChanged:)
-//                                                 name: kReachabilityChangedNotification
-//                                               object: nil];
-//    hostReach = [Reachability reachabilityWithHostName:@"www.google.com"];//可以以多种形式初始化
-//    [hostReach startNotifier];  //开始监听,会启动一个run loop
-//    [self updateInterfaceWithReachability: hostReach];
     //注册联网状态的通知监听器
     self.netProcessor = [NetProcessor new];
     [self.netProcessor initNet];
-
-    
-    
-    
     //增加标识，用于判断是否是第一次启动应用...
     if (![[NSUserDefaults standardUserDefaults] boolForKey:@"everLaunched"]) {
         [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"everLaunched"];
         [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"firstLaunch"];
     }
 
-    
     LeftViewController *leftVC = [[LeftViewController alloc] init];
     [SliderViewController sharedSliderController].LeftVC = leftVC;
     [SliderViewController sharedSliderController].MainVC = [[MainTabViewController alloc] init];

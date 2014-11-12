@@ -134,8 +134,8 @@ typedef NS_ENUM(NSInteger, RMoveDirection) {
     [_mainContentView addGestureRecognizer:_tapGestureRec];
     _tapGestureRec.enabled = NO;
     
-//    _panGestureRec = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(moveViewWithGesture:)];
-//    [_mainContentView addGestureRecognizer:_panGestureRec];
+    _panGestureRec = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(moveViewWithGesture:)];
+    [_mainContentView addGestureRecognizer:_panGestureRec];
 }
 
 #pragma mark - Init
@@ -280,129 +280,129 @@ typedef NS_ENUM(NSInteger, RMoveDirection) {
     }
 }
 
-//- (void)moveViewWithGesture:(UIPanGestureRecognizer *)panGes
-//{
-//    
-//    static CGFloat currentTranslateX;
-//    if (panGes.state == UIGestureRecognizerStateBegan)
-//    {
-//        currentTranslateX = _mainContentView.transform.tx;
-//
-//    }
-//    if (panGes.state == UIGestureRecognizerStateChanged)
-//    {
-//        CGFloat transX = [panGes translationInView:_mainContentView].x;
-//        transX = transX + currentTranslateX;
-//        CGFloat sca=0;
-//        
-//        CGFloat ltransX = (transX - _LeftSContentOffset)/_LeftSContentOffset * _LeftContentViewSContentOffset;
-//        CGFloat lsca = 1;
-//        
-//        if (transX > 0)
-//        {
-//            if (!_canShowLeft||_LeftVC==nil) {
-//                return;
-//            }
-//
-//            [self.view sendSubviewToBack:_rightSideView];
-//            [self configureViewShadowWithDirection:RMoveDirectionRight];
-//            
-//            if (_mainContentView.frame.origin.x < _LeftSContentOffset)
-//            {
-//                sca = 1 - (_mainContentView.frame.origin.x/_LeftSContentOffset) * (1-_LeftSContentScale);
-//                lsca = 1 - sca + _LeftSContentScale;
-//            }
-//            else
-//            {
-//                sca = _LeftSContentScale;
-//                lsca = 1;
-//                
-//                ltransX = 0;
-//            }
-//            
-//            self.changeLeftView(lsca, ltransX);
-//        }
-//        else    //transX < 0
-//        {
-//            if (!_canShowRight||_RightVC==nil) {
-//                return;
-//            }
-//
-//            [self.view sendSubviewToBack:_leftSideView];
-//            [self configureViewShadowWithDirection:RMoveDirectionLeft];
-//            
-//            if (_mainContentView.frame.origin.x > -_RightSContentOffset)
-//            {
-//                sca = 1 - (-_mainContentView.frame.origin.x/_RightSContentOffset) * (1-_RightSContentScale);
-//            }
-//            else
-//            {
-//                sca = _RightSContentScale;
-//            }
-//        }
-//        CGAffineTransform transS = CGAffineTransformMakeScale(sca, sca);
-//        CGAffineTransform transT = CGAffineTransformMakeTranslation(transX, 0);
-//        CGAffineTransform conT = CGAffineTransformConcat(transT, transS);
-//        _mainContentView.transform = conT;
-//    }
-//    else if (panGes.state == UIGestureRecognizerStateEnded)
-//    {
-//        CGFloat panX = [panGes translationInView:_mainContentView].x;
-//        CGFloat finalX = currentTranslateX + panX;
-//        if (finalX > _LeftSJudgeOffset)
-//        {
-//            if (!_canShowLeft||_LeftVC==nil) {
-//                return;
-//            }
-//
-//            CGAffineTransform conT = [self transformWithDirection:RMoveDirectionRight];
-//            [UIView beginAnimations:nil context:nil];
-//            _mainContentView.transform = conT;
-//            [UIView commitAnimations];
-//            
-//            showingLeft=YES;
-//            _MainVC.view.userInteractionEnabled=NO;
-//
-//            _tapGestureRec.enabled = YES;
-//            
-//            [self showLeft:YES];
-//            
-//            return;
-//        }
-//        if (finalX < -_RightSJudgeOffset)
-//        {
-//            if (!_canShowRight||_RightVC==nil) {
-//                return;
-//            }
-//
-//            CGAffineTransform conT = [self transformWithDirection:RMoveDirectionLeft];
-//            [UIView beginAnimations:nil context:nil];
-//            _mainContentView.transform = conT;
-//            [UIView commitAnimations];
-//            
-//            showingRight=YES;
-//            _MainVC.view.userInteractionEnabled=NO;
-//
-//            _tapGestureRec.enabled = YES;
-//            
-//            return;
-//        }
-//        else
-//        {
-//            CGAffineTransform oriT = CGAffineTransformIdentity;
-//            [UIView beginAnimations:nil context:nil];
-//            _mainContentView.transform = oriT;
-//            [UIView commitAnimations];
-//            
-//            [self showLeft:NO];
-//            
-//            showingRight=NO;
-//            showingLeft=NO;
-//            _MainVC.view.userInteractionEnabled=YES;
-//            _tapGestureRec.enabled = NO;
-//        }
-//    }
-//}
+- (void)moveViewWithGesture:(UIPanGestureRecognizer *)panGes
+{
+    
+    static CGFloat currentTranslateX;
+    if (panGes.state == UIGestureRecognizerStateBegan)
+    {
+        currentTranslateX = _mainContentView.transform.tx;
+
+    }
+    if (panGes.state == UIGestureRecognizerStateChanged)
+    {
+        CGFloat transX = [panGes translationInView:_mainContentView].x;
+        transX = transX + currentTranslateX;
+        CGFloat sca=0;
+        
+        CGFloat ltransX = (transX - _LeftSContentOffset)/_LeftSContentOffset * _LeftContentViewSContentOffset;
+        CGFloat lsca = 1;
+        
+        if (transX > 0)
+        {
+            if (!_canShowLeft||_LeftVC==nil) {
+                return;
+            }
+
+            [self.view sendSubviewToBack:_rightSideView];
+            [self configureViewShadowWithDirection:RMoveDirectionRight];
+            
+            if (_mainContentView.frame.origin.x < _LeftSContentOffset)
+            {
+                sca = 1 - (_mainContentView.frame.origin.x/_LeftSContentOffset) * (1-_LeftSContentScale);
+                lsca = 1 - sca + _LeftSContentScale;
+            }
+            else
+            {
+                sca = _LeftSContentScale;
+                lsca = 1;
+                
+                ltransX = 0;
+            }
+            
+            self.changeLeftView(lsca, ltransX);
+        }
+        else    //transX < 0
+        {
+            if (!_canShowRight||_RightVC==nil) {
+                return;
+            }
+
+            [self.view sendSubviewToBack:_leftSideView];
+            [self configureViewShadowWithDirection:RMoveDirectionLeft];
+            
+            if (_mainContentView.frame.origin.x > -_RightSContentOffset)
+            {
+                sca = 1 - (-_mainContentView.frame.origin.x/_RightSContentOffset) * (1-_RightSContentScale);
+            }
+            else
+            {
+                sca = _RightSContentScale;
+            }
+        }
+        CGAffineTransform transS = CGAffineTransformMakeScale(sca, sca);
+        CGAffineTransform transT = CGAffineTransformMakeTranslation(transX, 0);
+        CGAffineTransform conT = CGAffineTransformConcat(transT, transS);
+        _mainContentView.transform = conT;
+    }
+    else if (panGes.state == UIGestureRecognizerStateEnded)
+    {
+        CGFloat panX = [panGes translationInView:_mainContentView].x;
+        CGFloat finalX = currentTranslateX + panX;
+        if (finalX > _LeftSJudgeOffset)
+        {
+            if (!_canShowLeft||_LeftVC==nil) {
+                return;
+            }
+
+            CGAffineTransform conT = [self transformWithDirection:RMoveDirectionRight];
+            [UIView beginAnimations:nil context:nil];
+            _mainContentView.transform = conT;
+            [UIView commitAnimations];
+            
+            showingLeft=YES;
+            _MainVC.view.userInteractionEnabled=NO;
+
+            _tapGestureRec.enabled = YES;
+            
+            [self showLeft:YES];
+            
+            return;
+        }
+        if (finalX < -_RightSJudgeOffset)
+        {
+            if (!_canShowRight||_RightVC==nil) {
+                return;
+            }
+
+            CGAffineTransform conT = [self transformWithDirection:RMoveDirectionLeft];
+            [UIView beginAnimations:nil context:nil];
+            _mainContentView.transform = conT;
+            [UIView commitAnimations];
+            
+            showingRight=YES;
+            _MainVC.view.userInteractionEnabled=NO;
+
+            _tapGestureRec.enabled = YES;
+            
+            return;
+        }
+        else
+        {
+            CGAffineTransform oriT = CGAffineTransformIdentity;
+            [UIView beginAnimations:nil context:nil];
+            _mainContentView.transform = oriT;
+            [UIView commitAnimations];
+            
+            [self showLeft:NO];
+            
+            showingRight=NO;
+            showingLeft=NO;
+            _MainVC.view.userInteractionEnabled=YES;
+            _tapGestureRec.enabled = NO;
+        }
+    }
+}
 
 #pragma mark -
 

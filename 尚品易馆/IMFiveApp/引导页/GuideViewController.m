@@ -57,6 +57,7 @@
     UIImageView*imageview3=[[UIImageView alloc]initWithFrame:CGRectMake(640, 0, 320, CGRectGetHeight(scrollview.frame))];
     [imageview3 setImage:[UIImage imageNamed:@"scroll_3"]];
     imageview3.backgroundColor =GXRandomColor;
+    imageview3.userInteractionEnabled = YES;
     [scrollview addSubview:imageview3];
 
     
@@ -69,14 +70,15 @@
     [imageview3 addSubview:lable];
     
     btn = [UIButton buttonWithType:UIButtonTypeCustom];
-    [btn setFrame:CGRectMake(CGRectGetWidth(self.view.frame)/2-85,CGRectGetHeight(self.view.frame)-130, 170, 80)];
+    [btn setFrame:CGRectMake(0,0, self.view.frame.size.width, self.view.frame.size.height)];
     [btn setBackgroundImage:[UIImage imageNamed:@"Btn_orange"] forState:UIControlStateNormal];
+//    btn.backgroundColor = [UIColor purpleColor];
     [btn addTarget:self action:@selector(Firstpressed) forControlEvents:UIControlEventTouchUpInside];
     btn.titleLabel.font = [UIFont fontWithName:@"Helvetica-Bold" size:16.0f];
     [btn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [imageview3 addSubview:btn];
 
-    imageview3.userInteractionEnabled = YES;
+    
 //    UIPageControl*page=[[UIPageControl alloc]init];
 //    page.frame=CGRectMake(140, CGRectGetHeight(self.view.frame)-40, 45, 30);
 //    page.pageIndicatorTintColor = HexRGBAlpha(0x4fb4d9, 1);
@@ -100,7 +102,7 @@
 
 -(void)Firstpressed
 {
-    [UIViewController validatePanPackWithMLTransitionGestureRecognizerType:MLTransitionGestureRecognizerTypePan];
+    [UIViewController validatePanPackWithMLTransitionGestureRecognizerType:MLTransitionGestureRecognizerTypeScreenEdgePan];
     
     UINavigationController *naviC = [[UINavigationController alloc] initWithRootViewController:[SliderViewController sharedSliderController]];
     

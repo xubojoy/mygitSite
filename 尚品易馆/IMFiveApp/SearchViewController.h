@@ -8,8 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SearchViewController : QHBasicViewController<UIWebViewDelegate>
-@property (strong, nonatomic) UIWebView *webView;
+@interface SearchViewController : QHBasicViewController<UIWebViewDelegate,UITableViewDataSource,UITableViewDelegate,UISearchBarDelegate>
+{
+
+    NSMutableArray *dataArray;
+    NSMutableArray *searchResults;
+    UISearchBar *mySearchBar;
+    UISearchDisplayController *searchDisplayController;
+}
+@property (strong, nonatomic) UITableView *tableView;
 
 @property (strong, nonatomic) UIActivityIndicatorView *activityIndicator;
 
