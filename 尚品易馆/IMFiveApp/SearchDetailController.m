@@ -32,8 +32,6 @@
 - (void) viewDidLoad
 {
     [super viewDidLoad];
-    
-    NSLog(@">>>>>>>>>>self.nStr>>>>>>>%@",self.nStr);
     [self createNavWithTitle:self.title createMenuItem:^UIView *(int nIndex)
      {
          if (nIndex == 1)

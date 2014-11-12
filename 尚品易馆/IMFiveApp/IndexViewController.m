@@ -40,6 +40,7 @@
              [btn setUserInteractionEnabled:YES];
          }];
     }
+   
 }
 
 - (void)viewDidLoad
@@ -48,7 +49,7 @@
     
     [self addObserver];
     
-    [self createNavWithTitle:@"主页" createMenuItem:^UIView *(int nIndex)
+    [self createNavWithTitle:@"尚品易馆" createMenuItem:^UIView *(int nIndex)
      {
          if (nIndex == 1)
          {
@@ -88,6 +89,11 @@
     UITapGestureRecognizer *tSM = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(showMenuByTap:)];
     [bg addGestureRecognizer:tSM];
 //    [self initWebView];
+}
+
+-(void)reloadWebView{
+    [self.webView reload];
+
 }
 
 -(void) initWebView{

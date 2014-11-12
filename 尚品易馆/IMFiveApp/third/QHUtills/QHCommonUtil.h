@@ -23,6 +23,6 @@
 
 + (void)moveFileToDocument:(NSString *)fileName type:(NSString *)fileType;
 
-+ (UIImage *)imageNamed:(NSString *)name;
+//+ (UIImage *)imageNamed:(NSString *)name;
 
 @end

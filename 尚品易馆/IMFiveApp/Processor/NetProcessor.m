@@ -25,7 +25,7 @@
                                                 message:@"网络不通,请检查网络！"
                                                   delegate:nil
                                           cancelButtonTitle:@"确定" otherButtonTitles:nil];
-        [alert show];;
+        [alert show];
     }else if(status == ReachableViaWiFi){
         NSLog(@"WIFI联网");
     }else if(status == ReachableViaWWAN){

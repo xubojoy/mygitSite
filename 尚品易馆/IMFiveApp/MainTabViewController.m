@@ -43,6 +43,8 @@ static MainTabViewController *main;
 {
     [super viewDidLoad];
     
+     NSLog(@"111111111111111111111111");
+    
     [self addObserver];
     
     _tabC = [[UITabBarController alloc] init];
@@ -68,8 +70,8 @@ static MainTabViewController *main;
 - (void)reloadImage
 {
     [super reloadImage];
-
     [_tabC.tabBar setBackgroundImage:[UIImage imageNamed:@"tabbar_bg"]];
+    _tabC.delegate = self;
     NSArray *ar = _tabC.viewControllers;
     NSMutableArray *arD = [NSMutableArray new];
     [ar enumerateObjectsUsingBlock:^(UIViewController *viewController, NSUInteger idx, BOOL *stop)
@@ -117,5 +119,33 @@ static MainTabViewController *main;
     }];
     _tabC.viewControllers = arD;
 }
+
+- (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController
+{
+    NSInteger index = tabBarController.selectedIndex;
+    NSLog(@"____________________%ld",index);
+
+    switch (index) {
+        case 0:
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"刷新" object:nil];
+            break;
+        case 1:
+
+            break;
+        case 2:
+
+            break;
+        case 3:
+
+            break;
+        case 4:
+
+            break;
+        default:
+            break;
+    }
+    
+}
+
 
 @end

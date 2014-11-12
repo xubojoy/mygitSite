@@ -15,7 +15,6 @@
 @property (strong, nonatomic) UIActivityIndicatorView *activityIndicator;
 @property (copy, nonatomic) NSString *url;
 @property (copy, nonatomic) NSString *title;
-@property (copy, nonatomic) NSString *nStr;
 
 -(id) initWithUrl:(NSString *)url title:(NSString *)title;
 

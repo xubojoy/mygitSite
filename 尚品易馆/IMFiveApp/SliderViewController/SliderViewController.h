@@ -43,7 +43,6 @@
 - (void)showLeftViewController;
 - (void)showRightViewController;
 - (void)showLeft:(BOOL)bShow;
-- (void)tapViewWithGesture:(UITapGestureRecognizer *)tapGes;
 
 - (void)moveViewWithGesture:(UIPanGestureRecognizer *)panGes;
 - (void)closeSideBar;
