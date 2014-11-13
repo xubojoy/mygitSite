@@ -27,6 +27,9 @@
     NSMutableArray *childrenArray;
     NSMutableArray *grouparr;
     NSMutableDictionary *totalDic;
+    
+    NSString *lastString;
+
 }
 @property (nonatomic, strong) UIImageView *imageV;
 @end
@@ -38,19 +41,15 @@
     [super viewDidLoad];
     
     [self addObserver];
+    lastString=@"";
+
     
-    [self.view setBackgroundColor:[UIColor clearColor]];
-    
-    UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 320, self.view.frame.size.height)];
-    imageView.image = [UIImage imageNamed:@"left_bg"];
-    
-    [self.view addSubview:imageView];
-    self.view.backgroundColor = [UIColor blackColor];
+    [self.view setBackgroundColor:RGBACOLOR(51, 51, 51, 1)];
+
     selectedArr = [[NSMutableArray alloc] init];
     resultArray = [[NSArray alloc] init];
     nameDataArray = [[NSMutableArray alloc] init];
     childrenArray = [[NSMutableArray alloc] init];
-//    imageArray = [[NSMutableArray alloc] initWithObjects:@"1",@"2",@"3",@"4",@"5", nil];
     imageArray = [NSMutableArray new];
     nameUrlArray = [[NSMutableArray alloc] init];
     grouparr = [[NSMutableArray alloc] init];
@@ -176,8 +175,8 @@
     btn.frame = CGRectMake(0, 0, 223, 39.5);
     btn.imageEdgeInsets = UIEdgeInsetsMake(0, 20, 0, 100);
     [btn.imageView setFrame:CGRectMake(20, 10, 20, 20)];
-    [btn setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
-    btn.titleLabel.font = [UIFont boldSystemFontOfSize:20];
+    [btn setTitleColor:RGBACOLOR(183, 183, 183, 1) forState:UIControlStateNormal];
+    btn.titleLabel.font = [UIFont boldSystemFontOfSize:16];
     btn.titleEdgeInsets = UIEdgeInsetsMake(0, -50, 0, 0);
     [btn setTitle:[nameDataArray objectAtIndex:section] forState:UIControlStateNormal];
     [btn setImage:scaledImage forState:UIControlStateNormal];
@@ -188,14 +187,23 @@
     UIButton *btn1 = [UIButton buttonWithType:UIButtonTypeCustom];
     btn1.frame = CGRectMake(222, 0, 39.5, 39.5);
     [btn1 setImage:[UIImage imageNamed:@"push_btn_bg"] forState:UIControlStateNormal];
+    // 设置按钮内容的对齐方式
+    btn1.contentHorizontalAlignment = UIControlContentHorizontalAlignmentCenter;
+    // 设置btn中的imageview不拉伸
+    btn1.imageView.contentMode = UIViewContentModeCenter;
+    
+    // 设置btn中的imageview超出部分不剪切
+    btn.imageView.clipsToBounds = NO;
+    btn1.imageView.transform = CGAffineTransformMakeRotation(M_PI_2);
+    
     btn1.tag = 100+section;
 //     btn1.backgroundColor = [UIColor redColor];
     [btn1 addTarget:self action:@selector(doButton:) forControlEvents:UIControlEventTouchUpInside];
     [view addSubview:btn1];
     
-    self.imageV = [[UIImageView alloc] initWithFrame:CGRectMake(55, 40, 300, 1)];
-    self.imageV.backgroundColor = [UIColor clearColor];
-    self.imageV.image = [UIImage imageNamed:@"left_line"];
+    self.imageV = [[UIImageView alloc] initWithFrame:CGRectMake(35, 39.5, 300, 0.5)];
+    self.imageV.backgroundColor = [UIColor blackColor];
+//    self.imageV.image = [UIImage imageNamed:@"left_line"];
     [view addSubview:self.imageV];
     
     return view;
@@ -224,7 +232,7 @@
            UILabel *nameLabel = [[UILabel alloc]initWithFrame:CGRectMake(100, 0, 200, 44)];
             nameLabel.textColor = [UIColor whiteColor];
             nameLabel.text = totalDic[indexStr][indexPath.row];
-            nameLabel.font = [UIFont systemFontOfSize:15];
+            nameLabel.font = [UIFont systemFontOfSize:14];
             [cell.contentView addSubview:nameLabel];
         }
         
@@ -242,21 +250,36 @@
 -(void)doButton:(UIButton *)sender
 {
     NSString *string = [NSString stringWithFormat:@"%ld",sender.tag-100];
+    //数组selected  Arr里面存的数据和表头想对应，方便以后做比较
+    
+        if(![lastString isEqual:string]){
+            [selectedArr removeObject:lastString];
+            if ([selectedArr containsObject:string])
+            {
+                [selectedArr removeObject:string];
+            }
+            else
+            {
+                [selectedArr addObject:string];
+            }
+        }
+        else {
+            if ([selectedArr containsObject:lastString])
+            {
+                [selectedArr removeObject:lastString];
+            }
+            else
+            {
+                [selectedArr addObject:lastString];
+            }
 
+        }
+
+   
     
-    //数组selectedArr里面存的数据和表头想对应，方便以后做比较
-    if ([selectedArr containsObject:string])
-    {
-        [selectedArr removeObject:string];
-        sender.imageView.transform = CGAffineTransformIdentity;
-    }
-    else
-    {
-        [selectedArr addObject:string];
-        [sender setImage:[UIImage imageNamed:@"menu_icon_bulb@2x"] forState:UIControlStateNormal];
-    }
+    lastString=string;
     
-    [_tableView reloadData];
+        [_tableView reloadData];
 }
 
 -(void)pushBtnClick:(UIButton *)sender{

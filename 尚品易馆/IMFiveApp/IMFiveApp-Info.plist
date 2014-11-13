@@ -5,7 +5,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
-	<string>尚品易购</string>
+	<string>尚品易馆</string>
 	<key>CFBundleExecutable</key>
 	<string>${EXECUTABLE_NAME}</string>
 	<key>CFBundleIconFiles</key>
@@ -13,11 +13,11 @@
 		<string>logo.png</string>
 	</array>
 	<key>CFBundleIdentifier</key>
-	<string>com.chen.${PRODUCT_NAME:rfc1034identifier}</string>
+	<string>spyg</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
-	<string>尚品易购</string>
+	<string>尚品易馆</string>
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
