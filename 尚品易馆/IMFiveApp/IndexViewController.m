@@ -91,10 +91,10 @@
 //    [self initWebView];
 }
 
--(void)reloadWebView{
-    [self.webView reload];
-
-}
+//-(void)reloadWebView{
+//    [self.webView reload];
+//
+//}
 
 -(void) initWebView{
     self.webView = [[UIWebView alloc] init];
