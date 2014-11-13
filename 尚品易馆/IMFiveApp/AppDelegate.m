@@ -66,31 +66,6 @@
     return YES;
 }
 
-//// 连接改变
-//- (void) reachabilityChanged: (NSNotification* )note
-//{
-//    Reachability* curReach = [note object];
-//    NSParameterAssert([curReach isKindOfClass: [Reachability class]]);
-//    [self updateInterfaceWithReachability: curReach];
-//}
-//
-////处理连接改变后的情况
-//- (void) updateInterfaceWithReachability: (Reachability*) curReach
-//{
-//    //对连接改变做出响应的处理动作。
-//    NetworkStatus status = [curReach currentReachabilityStatus];
-//    
-//    if (status == NotReachable) {  //没有连接到网络就弹出提实况
-//        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"My App Name"
-//                                                        message:@"NotReachable"
-//                                                       delegate:nil
-//                                              cancelButtonTitle:@"确定" otherButtonTitles:nil];
-//        [alert show];
-//    }
-//    
-//}
-
-
 - (void)applicationWillResignActive:(UIApplication *)application
 {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

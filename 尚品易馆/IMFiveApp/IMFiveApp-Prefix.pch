@@ -26,5 +26,6 @@
     #import "QHBasicViewController.h"
     #import "Macro.h"
     #import "UIView+Custom.h"
+    #import "NetProcessor.h"
 
 #endif
