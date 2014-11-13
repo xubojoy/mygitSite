@@ -8,6 +8,6 @@
 
 @interface ClassifyViewController : QHBasicViewController<UIWebViewDelegate>
 @property (strong, nonatomic) UIWebView *webView;
-
+@property (nonatomic, strong) NetProcessor *netProcessor;
 @property (strong, nonatomic) UIActivityIndicatorView *activityIndicator;
 @end

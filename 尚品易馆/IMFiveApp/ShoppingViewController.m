@@ -31,7 +31,9 @@
     {
         return nil;
     }];
-//    [self initWebView];
+    //注册联网状态的通知监听器
+    self.netProcessor = [NetProcessor new];
+    [self.netProcessor initNet];
     
 }
 
