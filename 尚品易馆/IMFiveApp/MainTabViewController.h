@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MainTabViewController : QHBasicViewController<UITabBarControllerDelegate>
+@interface MainTabViewController : QHBasicViewController<UIWebViewDelegate>
+@property (strong, nonatomic) UIWebView *webView;
 
+@property (strong, nonatomic) UIActivityIndicatorView *activityIndicator;
 + (MainTabViewController *)getMain;
--(void)initTabbar;
 @end

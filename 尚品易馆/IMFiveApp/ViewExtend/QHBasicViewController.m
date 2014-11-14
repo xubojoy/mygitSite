@@ -67,8 +67,6 @@
     [self.view addSubview:_navView];
     _navView.userInteractionEnabled = YES;
     
-    NSLog(@">>>>>_navView.height>>>>>>>%f",_navView.height);
-    
     if (szTitle != nil)
     {
         UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake((_navView.width - 200)/2, (_navView.height - 40)/2+7, 200, 40)];

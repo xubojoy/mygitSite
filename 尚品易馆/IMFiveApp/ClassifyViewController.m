@@ -85,9 +85,9 @@
 -(void) initWebView{
     self.webView = [[UIWebView alloc] init];
     if (IOS_6) {
-        self.webView.frame = CGRectMake(0, 44, 320, self.view.frame.size.height-44-49);
+        self.webView.frame = CGRectMake(0, 44, 320, self.view.frame.size.height-44);
     }
-    self.webView.frame = CGRectMake(0, 64, 320, self.view.frame.size.height-64-49);
+    self.webView.frame = CGRectMake(0, 64, 320, self.view.frame.size.height-64);
     self.activityIndicator = [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 32.0f, 32.0f)];
     [self.activityIndicator setCenter:self.webView.center];
     [self.activityIndicator setActivityIndicatorViewStyle:UIActivityIndicatorViewStyleGray];

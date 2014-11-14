@@ -52,7 +52,7 @@
          }
          return nil;
      }];
-    [[MainTabViewController getMain] initTabbar];
+//    [[MainTabViewController getMain] initTabbar];
     [self initWebView];
 }
 - (void)backAction:(UIButton *)btn
