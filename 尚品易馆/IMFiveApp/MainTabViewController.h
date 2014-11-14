@@ -11,5 +11,5 @@
 @interface MainTabViewController : QHBasicViewController<UITabBarControllerDelegate>
 
 + (MainTabViewController *)getMain;
-
+-(void)initTabbar;
 @end

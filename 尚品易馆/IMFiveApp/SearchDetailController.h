@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MainTabViewController.h"
 
 @interface SearchDetailController : QHBasicViewController<UIWebViewDelegate>
 
