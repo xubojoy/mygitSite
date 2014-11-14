@@ -172,7 +172,8 @@
     UIGraphicsEndImageContext();
 //
     UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
-    btn.frame = CGRectMake(0, 0, 223, 39.5);
+    btn.frame = CGRectMake(0, 0, 210, 39.5);
+//    btn.backgroundColor = [UIColor purpleColor];
     btn.imageEdgeInsets = UIEdgeInsetsMake(0, 20, 0, 100);
     [btn.imageView setFrame:CGRectMake(20, 10, 20, 20)];
     [btn setTitleColor:RGBACOLOR(183, 183, 183, 1) forState:UIControlStateNormal];
@@ -185,7 +186,8 @@
     [view addSubview:btn];
     
     UIButton *btn1 = [UIButton buttonWithType:UIButtonTypeCustom];
-    btn1.frame = CGRectMake(222, 0, 39.5, 39.5);
+    btn1.frame = CGRectMake(210, 0, 70, 39.5);
+//    btn1.backgroundColor = [UIColor redColor];
     [btn1 setImage:[UIImage imageNamed:@"push_btn_bg"] forState:UIControlStateNormal];
     // 设置按钮内容的对齐方式
     btn1.contentHorizontalAlignment = UIControlContentHorizontalAlignmentCenter;
@@ -201,7 +203,7 @@
     [btn1 addTarget:self action:@selector(doButton:) forControlEvents:UIControlEventTouchUpInside];
     [view addSubview:btn1];
     
-    self.imageV = [[UIImageView alloc] initWithFrame:CGRectMake(35, 39.5, 300, 0.5)];
+    self.imageV = [[UIImageView alloc] initWithFrame:CGRectMake(28, 39.5, 300, 0.5)];
     self.imageV.backgroundColor = [UIColor blackColor];
 //    self.imageV.image = [UIImage imageNamed:@"left_line"];
     [view addSubview:self.imageV];

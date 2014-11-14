@@ -46,7 +46,11 @@ static MainTabViewController *main;
      NSLog(@"111111111111111111111111");
     
     [self addObserver];
+    [self initTabbar];
     
+}
+
+-(void)initTabbar{
     _tabC = [[UITabBarController alloc] init];
     [_tabC.tabBar setBackgroundColor:[UIColor clearColor]];
     [_tabC.view setFrame:self.view.frame];
@@ -61,10 +65,12 @@ static MainTabViewController *main;
     
     [self reloadImage];
     [[UITabBarItem appearance] setTitleTextAttributes:
-        [NSDictionary dictionaryWithObjectsAndKeys:RGBA(96, 164, 222, 1), NSForegroundColorAttributeName, nil]
+     [NSDictionary dictionaryWithObjectsAndKeys:RGBA(96, 164, 222, 1), NSForegroundColorAttributeName, nil]
                                              forState:UIControlStateSelected];
     
     [_tabC setSelectedIndex:0];
+
+
 }
 
 - (void)reloadImage

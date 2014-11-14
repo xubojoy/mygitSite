@@ -24,11 +24,14 @@
     return self;
 }
 
-//-(void)viewWillAppear:(BOOL)animated{
+-(void)viewWillAppear:(BOOL)animated{
 //    [super viewWillAppear:animated];
 //    [self.webView removeFromSuperview];
 //    [self initWebView];
-//}
+    
+    
+}
+
 - (void) viewDidLoad
 {
     [super viewDidLoad];
@@ -49,7 +52,7 @@
          }
          return nil;
      }];
-    
+    [[MainTabViewController getMain] initTabbar];
     [self initWebView];
 }
 - (void)backAction:(UIButton *)btn

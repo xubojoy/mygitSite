@@ -8,6 +8,7 @@
 
 #import "NextViewController.h"
 #import "SliderViewController.h"
+#import "SearchViewController.h"
 @interface NextViewController ()
 
 @end
@@ -48,12 +49,30 @@
          }
          return nil;
      }];
+    UIButton *btn1 = [UIButton buttonWithType:UIButtonTypeCustom];
+    UIImage *i = [UIImage imageNamed:@"search_wbg"];
+    [btn1 setImage:i forState:UIControlStateNormal];
+    [btn1 setFrame:CGRectMake(260, (self.navView.height - i.size.height)/2-10, i.size.width+35, i.size.height+35)];
+    [btn1 setImage:[UIImage imageNamed:@"search_bg"] forState:UIControlStateSelected];
+    btn1.imageEdgeInsets = UIEdgeInsetsMake(0, 25, 0, 5);
+    btn1.tag = 1000;
+    [btn1 addTarget:self action:@selector(searchBtnClick:) forControlEvents:UIControlEventTouchUpInside];
+    [self.navView addSubview:btn1];
     
 //[self initWebView];
 }
 - (void)backAction:(UIButton *)btn
 {
     [[SliderViewController sharedSliderController].navigationController popToRootViewControllerAnimated:YES];
+}
+
+-(void)searchBtnClick:(UIButton *)sender{
+    NSLog(@">>>>>>>>>>>>search");
+    SearchViewController *svc = [[SearchViewController alloc] init];
+    [[SliderViewController sharedSliderController] closeSideBarWithAnimate:YES complete:^(BOOL finished)
+     {
+         [[SliderViewController sharedSliderController].navigationController pushViewController:svc animated:YES];
+     }];
 }
 
 -(void) initWebView{

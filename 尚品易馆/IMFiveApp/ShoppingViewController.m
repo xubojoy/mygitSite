@@ -7,7 +7,8 @@
 //
 
 #import "ShoppingViewController.h"
-
+#import "SearchViewController.h"
+#import "SliderViewController.h"
 @interface ShoppingViewController ()
 {
     NSMutableArray *_arData;
@@ -28,13 +29,47 @@
     [self addObserver];
     
     [self createNavWithTitle:@"尚品易馆" createMenuItem:^UIView *(int nIndex)
-    {
-        return nil;
-    }];
+     {
+         if (nIndex == 1)
+         {
+             UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+             UIImage *i = [UIImage imageNamed:@"menu_icon_white"];
+             [btn setImage:i forState:UIControlStateNormal];
+             [btn setFrame:CGRectMake(0, (self.navView.height - i.size.height)/2-10, i.size.width+40, i.size.height+35)];
+             btn.imageEdgeInsets = UIEdgeInsetsMake(0, 5, 0, 25);
+             [btn setImage:[UIImage imageNamed:@"menu_icon_red"] forState:UIControlStateSelected];
+             btn.tag = 989;
+             [btn addTarget:self action:@selector(showLeft:) forControlEvents:UIControlEventTouchUpInside];
+             return btn;
+         }
+         return nil;
+     }];
+    UIButton *btn1 = [UIButton buttonWithType:UIButtonTypeCustom];
+    UIImage *i = [UIImage imageNamed:@"search_wbg"];
+    [btn1 setImage:i forState:UIControlStateNormal];
+    [btn1 setFrame:CGRectMake(260, (self.navView.height - i.size.height)/2-10, i.size.width+35, i.size.height+35)];
+    [btn1 setImage:[UIImage imageNamed:@"search_bg"] forState:UIControlStateSelected];
+    btn1.imageEdgeInsets = UIEdgeInsetsMake(0, 25, 0, 5);
+    btn1.tag = 1000;
+    [btn1 addTarget:self action:@selector(searchBtnClick:) forControlEvents:UIControlEventTouchUpInside];
+    [self.navView addSubview:btn1];
     //注册联网状态的通知监听器
     self.netProcessor = [NetProcessor new];
     [self.netProcessor initNet];
     
+}
+
+- (void)showLeft:(UIButton *)sender {
+    [[SliderViewController sharedSliderController] showLeftViewController];
+}
+
+-(void)searchBtnClick:(UIButton *)sender{
+    NSLog(@">>>>>>>>>>>>search");
+    SearchViewController *svc = [[SearchViewController alloc] init];
+    [[SliderViewController sharedSliderController] closeSideBarWithAnimate:YES complete:^(BOOL finished)
+     {
+         [[SliderViewController sharedSliderController].navigationController pushViewController:svc animated:YES];
+     }];
 }
 
 -(void) initWebView{
