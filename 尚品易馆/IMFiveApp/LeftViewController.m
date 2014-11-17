@@ -199,7 +199,6 @@
     btn1.imageView.transform = CGAffineTransformMakeRotation(M_PI_2);
     
     btn1.tag = 100+section;
-//     btn1.backgroundColor = [UIColor redColor];
     [btn1 addTarget:self action:@selector(doButton:) forControlEvents:UIControlEventTouchUpInside];
     [view addSubview:btn1];
     
@@ -237,7 +236,6 @@
             nameLabel.font = [UIFont systemFontOfSize:14];
             [cell.contentView addSubview:nameLabel];
         }
-        
         return cell;
 }
 
