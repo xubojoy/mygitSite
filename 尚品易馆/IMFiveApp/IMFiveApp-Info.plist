@@ -9,9 +9,7 @@
 	<key>CFBundleExecutable</key>
 	<string>${EXECUTABLE_NAME}</string>
 	<key>CFBundleIconFiles</key>
-	<array>
-		<string>logo.png</string>
-	</array>
+	<array/>
 	<key>CFBundleIdentifier</key>
 	<string>shangpin</string>
 	<key>CFBundleInfoDictionaryVersion</key>

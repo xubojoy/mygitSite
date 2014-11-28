@@ -59,7 +59,6 @@
     imageview3.backgroundColor =GXRandomColor;
     imageview3.userInteractionEnabled = YES;
     [scrollview addSubview:imageview3];
-
     
     UILabel *lable = [[UILabel alloc]initWithFrame:CGRectMake(CGRectGetWidth(self.view.frame)/2-150,CGRectGetHeight(self.view.frame)-125, 300, 50)];
     lable.backgroundColor = [UIColor clearColor];

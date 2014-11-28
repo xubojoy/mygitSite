@@ -28,12 +28,11 @@
 		7430609319A4849B00D3625F /* MainTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7430608C19A4849B00D3625F /* MainTabViewController.m */; };
 		7430609419A4849B00D3625F /* IndexViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7430608E19A4849B00D3625F /* IndexViewController.m */; };
 		74597FCD19B1CBF000C9737E /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 74597FCC19B1CBF000C9737E /* libz.dylib */; };
+		A845D98E1A28574200503D95 /* scroll_1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A845D98B1A28574200503D95 /* scroll_1@2x.png */; };
+		A845D98F1A28574200503D95 /* scroll_2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A845D98C1A28574200503D95 /* scroll_2@2x.png */; };
+		A845D9901A28574200503D95 /* scroll_3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A845D98D1A28574200503D95 /* scroll_3@2x.png */; };
 		A85A1D6B1A106EB4007AA77D /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = A85A1D6A1A106EB4007AA77D /* Reachability.m */; };
 		A85A1D721A107187007AA77D /* NetProcessor.m in Sources */ = {isa = PBXBuildFile; fileRef = A85A1D711A107187007AA77D /* NetProcessor.m */; };
-		A85A1D821A10902E007AA77D /* scroll_1.png in Resources */ = {isa = PBXBuildFile; fileRef = A85A1D7F1A10902E007AA77D /* scroll_1.png */; };
-		A85A1D831A10902E007AA77D /* scroll_2.png in Resources */ = {isa = PBXBuildFile; fileRef = A85A1D801A10902E007AA77D /* scroll_2.png */; };
-		A85A1D841A10902E007AA77D /* scroll_3.png in Resources */ = {isa = PBXBuildFile; fileRef = A85A1D811A10902E007AA77D /* scroll_3.png */; };
-		A85A1D861A10981C007AA77D /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = A85A1D851A10981C007AA77D /* logo.png */; };
 		A88A8EC41A11F68F00A0F417 /* SearchDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = A88A8EC31A11F68F00A0F417 /* SearchDetailController.m */; };
 		A88A8EC91A11F76100A0F417 /* ChineseInclude.m in Sources */ = {isa = PBXBuildFile; fileRef = A88A8EC61A11F76100A0F417 /* ChineseInclude.m */; };
 		A88A8F001A11F91500A0F417 /* ChineseToPinyinResource.m in Sources */ = {isa = PBXBuildFile; fileRef = A88A8EF41A11F91500A0F417 /* ChineseToPinyinResource.m */; };
@@ -125,14 +124,13 @@
 		7430608D19A4849B00D3625F /* IndexViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IndexViewController.h; sourceTree = "<group>"; };
 		7430608E19A4849B00D3625F /* IndexViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IndexViewController.m; sourceTree = "<group>"; };
 		74597FCC19B1CBF000C9737E /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		A845D98B1A28574200503D95 /* scroll_1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "scroll_1@2x.png"; sourceTree = "<group>"; };
+		A845D98C1A28574200503D95 /* scroll_2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "scroll_2@2x.png"; sourceTree = "<group>"; };
+		A845D98D1A28574200503D95 /* scroll_3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "scroll_3@2x.png"; sourceTree = "<group>"; };
 		A85A1D691A106EB4007AA77D /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Reachability.h; path = third/Reachability.h; sourceTree = "<group>"; };
 		A85A1D6A1A106EB4007AA77D /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Reachability.m; path = third/Reachability.m; sourceTree = "<group>"; };
 		A85A1D701A107187007AA77D /* NetProcessor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NetProcessor.h; path = Processor/NetProcessor.h; sourceTree = "<group>"; };
 		A85A1D711A107187007AA77D /* NetProcessor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NetProcessor.m; path = Processor/NetProcessor.m; sourceTree = "<group>"; };
-		A85A1D7F1A10902E007AA77D /* scroll_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = scroll_1.png; sourceTree = "<group>"; };
-		A85A1D801A10902E007AA77D /* scroll_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = scroll_2.png; sourceTree = "<group>"; };
-		A85A1D811A10902E007AA77D /* scroll_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = scroll_3.png; sourceTree = "<group>"; };
-		A85A1D851A10981C007AA77D /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		A88A8EC21A11F68F00A0F417 /* SearchDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchDetailController.h; sourceTree = "<group>"; };
 		A88A8EC31A11F68F00A0F417 /* SearchDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchDetailController.m; sourceTree = "<group>"; };
 		A88A8EC51A11F76100A0F417 /* ChineseInclude.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChineseInclude.h; path = domain/ChineseInclude.h; sourceTree = "<group>"; };
@@ -330,7 +328,6 @@
 		744EE9D219A4C76400941E50 /* resource */ = {
 			isa = PBXGroup;
 			children = (
-				A85A1D851A10981C007AA77D /* logo.png */,
 				A8B50C7D1A0CC56600DC2DEA /* ios */,
 			);
 			path = resource;
@@ -446,9 +443,9 @@
 		A8B50C7D1A0CC56600DC2DEA /* ios */ = {
 			isa = PBXGroup;
 			children = (
-				A85A1D7F1A10902E007AA77D /* scroll_1.png */,
-				A85A1D801A10902E007AA77D /* scroll_2.png */,
-				A85A1D811A10902E007AA77D /* scroll_3.png */,
+				A845D98B1A28574200503D95 /* scroll_1@2x.png */,
+				A845D98C1A28574200503D95 /* scroll_2@2x.png */,
+				A845D98D1A28574200503D95 /* scroll_3@2x.png */,
 				A8B50C7E1A0CC56600DC2DEA /* index */,
 				A8B50C8F1A0CC56600DC2DEA /* menu */,
 			);
@@ -582,11 +579,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				A8B50C9D1A0CC56600DC2DEA /* feed_back_item_bg@2x.png in Resources */,
-				A85A1D821A10902E007AA77D /* scroll_1.png in Resources */,
 				A8B50CAD1A0CC56600DC2DEA /* 5@2x.png in Resources */,
 				A8B50C991A0CC56600DC2DEA /* account_item_bg@2x.png in Resources */,
 				A8B50CA61A0CC56600DC2DEA /* shopping_item_wbg@2x.png in Resources */,
 				A8B50CAA1A0CC56600DC2DEA /* 2@2x.png in Resources */,
+				A845D98E1A28574200503D95 /* scroll_1@2x.png in Resources */,
 				A8FC07311A08BD85000FAD59 /* WebContainerController.xib in Resources */,
 				A8B50CAF1A0CC56600DC2DEA /* left_bg@2x.png in Resources */,
 				A8B50CAB1A0CC56600DC2DEA /* 3@2x.png in Resources */,
@@ -594,12 +591,10 @@
 				A8B50CA91A0CC56600DC2DEA /* 1@2x.png in Resources */,
 				A8B50CB11A0CC56600DC2DEA /* push_btn_bg@2x.png in Resources */,
 				A88A8F061A11F91500A0F417 /* unicode_to_hanyu_pinyin.txt in Resources */,
-				A85A1D861A10981C007AA77D /* logo.png in Resources */,
+				A845D9901A28574200503D95 /* scroll_3@2x.png in Resources */,
 				A8B50CA51A0CC56600DC2DEA /* shopping_item_bg@2x.png in Resources */,
-				A85A1D831A10902E007AA77D /* scroll_2.png in Resources */,
 				A8B50CA71A0CC56600DC2DEA /* tabbar_bg@2x.png in Resources */,
 				A8B50CAE1A0CC56600DC2DEA /* jm.png in Resources */,
-				A85A1D841A10902E007AA77D /* scroll_3.png in Resources */,
 				A8B50CA11A0CC56600DC2DEA /* menu_icon_red@2x.png in Resources */,
 				A8B50CA21A0CC56600DC2DEA /* menu_icon_white@2x.png in Resources */,
 				A8B50CB01A0CC56600DC2DEA /* left_line@2x.png in Resources */,
@@ -609,6 +604,7 @@
 				A8B50C9B1A0CC56600DC2DEA /* classify_item_bg@2x.png in Resources */,
 				A8B50C9F1A0CC56600DC2DEA /* index_item_bg@2x.png in Resources */,
 				7430604D19A44EEB00D3625F /* Images.xcassets in Resources */,
+				A845D98F1A28574200503D95 /* scroll_2@2x.png in Resources */,
 				A8B50C9C1A0CC56600DC2DEA /* classify_item_wbg@2x.png in Resources */,
 				A8B50C9E1A0CC56600DC2DEA /* feed_back_item_wbg@2x.png in Resources */,
 				A8B50CAC1A0CC56600DC2DEA /* 4@2x.png in Resources */,
