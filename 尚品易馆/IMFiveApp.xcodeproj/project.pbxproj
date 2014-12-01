@@ -28,6 +28,9 @@
 		7430609319A4849B00D3625F /* MainTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7430608C19A4849B00D3625F /* MainTabViewController.m */; };
 		7430609419A4849B00D3625F /* IndexViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7430608E19A4849B00D3625F /* IndexViewController.m */; };
 		74597FCD19B1CBF000C9737E /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 74597FCC19B1CBF000C9737E /* libz.dylib */; };
+		A80859891A2C5CBE007A20FB /* scroll_1.png in Resources */ = {isa = PBXBuildFile; fileRef = A80859861A2C5CBE007A20FB /* scroll_1.png */; };
+		A808598A1A2C5CBE007A20FB /* scroll_2.png in Resources */ = {isa = PBXBuildFile; fileRef = A80859871A2C5CBE007A20FB /* scroll_2.png */; };
+		A808598B1A2C5CBE007A20FB /* scroll_3.png in Resources */ = {isa = PBXBuildFile; fileRef = A80859881A2C5CBE007A20FB /* scroll_3.png */; };
 		A845D98E1A28574200503D95 /* scroll_1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A845D98B1A28574200503D95 /* scroll_1@2x.png */; };
 		A845D98F1A28574200503D95 /* scroll_2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A845D98C1A28574200503D95 /* scroll_2@2x.png */; };
 		A845D9901A28574200503D95 /* scroll_3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A845D98D1A28574200503D95 /* scroll_3@2x.png */; };
@@ -124,6 +127,9 @@
 		7430608D19A4849B00D3625F /* IndexViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IndexViewController.h; sourceTree = "<group>"; };
 		7430608E19A4849B00D3625F /* IndexViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IndexViewController.m; sourceTree = "<group>"; };
 		74597FCC19B1CBF000C9737E /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		A80859861A2C5CBE007A20FB /* scroll_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = scroll_1.png; sourceTree = "<group>"; };
+		A80859871A2C5CBE007A20FB /* scroll_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = scroll_2.png; sourceTree = "<group>"; };
+		A80859881A2C5CBE007A20FB /* scroll_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = scroll_3.png; sourceTree = "<group>"; };
 		A845D98B1A28574200503D95 /* scroll_1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "scroll_1@2x.png"; sourceTree = "<group>"; };
 		A845D98C1A28574200503D95 /* scroll_2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "scroll_2@2x.png"; sourceTree = "<group>"; };
 		A845D98D1A28574200503D95 /* scroll_3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "scroll_3@2x.png"; sourceTree = "<group>"; };
@@ -443,6 +449,9 @@
 		A8B50C7D1A0CC56600DC2DEA /* ios */ = {
 			isa = PBXGroup;
 			children = (
+				A80859861A2C5CBE007A20FB /* scroll_1.png */,
+				A80859871A2C5CBE007A20FB /* scroll_2.png */,
+				A80859881A2C5CBE007A20FB /* scroll_3.png */,
 				A845D98B1A28574200503D95 /* scroll_1@2x.png */,
 				A845D98C1A28574200503D95 /* scroll_2@2x.png */,
 				A845D98D1A28574200503D95 /* scroll_3@2x.png */,
@@ -579,6 +588,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A8B50C9D1A0CC56600DC2DEA /* feed_back_item_bg@2x.png in Resources */,
+				A80859891A2C5CBE007A20FB /* scroll_1.png in Resources */,
 				A8B50CAD1A0CC56600DC2DEA /* 5@2x.png in Resources */,
 				A8B50C991A0CC56600DC2DEA /* account_item_bg@2x.png in Resources */,
 				A8B50CA61A0CC56600DC2DEA /* shopping_item_wbg@2x.png in Resources */,
@@ -590,10 +600,12 @@
 				A8B50CA01A0CC56600DC2DEA /* index_item_wbg@2x.png in Resources */,
 				A8B50CA91A0CC56600DC2DEA /* 1@2x.png in Resources */,
 				A8B50CB11A0CC56600DC2DEA /* push_btn_bg@2x.png in Resources */,
+				A808598B1A2C5CBE007A20FB /* scroll_3.png in Resources */,
 				A88A8F061A11F91500A0F417 /* unicode_to_hanyu_pinyin.txt in Resources */,
 				A845D9901A28574200503D95 /* scroll_3@2x.png in Resources */,
 				A8B50CA51A0CC56600DC2DEA /* shopping_item_bg@2x.png in Resources */,
 				A8B50CA71A0CC56600DC2DEA /* tabbar_bg@2x.png in Resources */,
+				A808598A1A2C5CBE007A20FB /* scroll_2.png in Resources */,
 				A8B50CAE1A0CC56600DC2DEA /* jm.png in Resources */,
 				A8B50CA11A0CC56600DC2DEA /* menu_icon_red@2x.png in Resources */,
 				A8B50CA21A0CC56600DC2DEA /* menu_icon_white@2x.png in Resources */,
