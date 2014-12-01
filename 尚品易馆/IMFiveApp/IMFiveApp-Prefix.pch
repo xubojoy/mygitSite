@@ -29,3 +29,4 @@
     #import "NetProcessor.h"
 
 #endif
+#define DEVICE_IS_IPHONE5 ([[UIScreen mainScreen] bounds].size.height == 568)
