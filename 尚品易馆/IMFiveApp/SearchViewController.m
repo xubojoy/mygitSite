@@ -104,4 +104,18 @@
     [self.navigationController pushViewController:sdc animated:YES];
 }
 
+-(void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar{
+    
+    searchBar.showsCancelButton = YES;
+    for(id cc in [searchBar subviews])
+    {
+        if([cc isKindOfClass:[UIButton class]])
+        {
+            UIButton *btn = (UIButton *)cc;
+            [btn setTitle:@"取消"  forState:UIControlStateNormal];
+        }
+    }
+    
+}
+
 @end
