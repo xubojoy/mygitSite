@@ -12,6 +12,7 @@
 #import "ChineseInclude.h"
 #import "PinYinForObjc.h"
 #import "Macro.h"
+#import "LeftViewController.h"
 
 @interface SearchViewController ()
 
@@ -36,7 +37,7 @@
              [btn setImage:[UIImage imageNamed:@"menu_icon_red"] forState:UIControlStateSelected];
              
              btn.tag = 989;
-             [btn addTarget:self action:@selector(backAction:) forControlEvents:UIControlEventTouchUpInside];
+             [btn addTarget:self action:@selector(showLeft:) forControlEvents:UIControlEventTouchUpInside];
              return btn;
          }
          return nil;
@@ -57,9 +58,11 @@
     dataArray = [NSMutableArray new];
 }
 
-- (void)backAction:(UIButton *)btn
-{
+- (void)showLeft:(UIButton *)sender {
+    
+    NSLog(@">>>>>>>>>>>>来啦！！！！");
     [[SliderViewController sharedSliderController].navigationController popToRootViewControllerAnimated:YES];
+    [[SliderViewController sharedSliderController] showLeftViewController];
 }
 #pragma UITableViewDataSource
 

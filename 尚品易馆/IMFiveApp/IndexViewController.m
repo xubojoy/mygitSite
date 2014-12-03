@@ -28,20 +28,20 @@
     [self initWebView];
 }
 
-- (void)viewDidDisappear:(BOOL)animated
-{
-    UIButton *btn = (UIButton *)self.rightV;
-    if (btn.selected)
-    {
-        [btn setUserInteractionEnabled:NO];
-        [btn setSelected:!btn.selected];
-        [self showMenuWithBool:btn.selected complete:^()
-         {
-             [btn setUserInteractionEnabled:YES];
-         }];
-    }
-   
-}
+//- (void)viewDidDisappear:(BOOL)animated
+//{
+//    UIButton *btn = (UIButton *)self.rightV;
+//    if (btn.selected)
+//    {
+//        [btn setUserInteractionEnabled:NO];
+//        [btn setSelected:!btn.selected];
+//        [self showMenuWithBool:btn.selected complete:^()
+//         {
+//             [btn setUserInteractionEnabled:YES];
+//         }];
+//    }
+//   
+//}
 
 - (void)viewDidLoad
 {
@@ -144,16 +144,17 @@
 #pragma mark - Actions
 
 - (void)showLeft:(UIButton *)sender {
-     [[SliderViewController sharedSliderController] showLeftViewController];
+    NSLog(@">>>>>>>>>>>>search");
+//     [[SliderViewController sharedSliderController] showLeftViewController];
 }
 
 -(void)searchBtnClick:(UIButton *)sender{
     NSLog(@">>>>>>>>>>>>search");
-    SearchViewController *svc = [[SearchViewController alloc] init];
-    [[SliderViewController sharedSliderController] closeSideBarWithAnimate:YES complete:^(BOOL finished)
-     {
-         [[SliderViewController sharedSliderController].navigationController pushViewController:svc animated:YES];
-     }];
+//    SearchViewController *svc = [[SearchViewController alloc] init];
+//    [[SliderViewController sharedSliderController] closeSideBarWithAnimate:YES complete:^(BOOL finished)
+//     {
+//         [self.navigationController pushViewController:svc animated:YES];
+//     }];
 
 
 }

@@ -75,7 +75,8 @@
 }
 - (void)backAction:(UIButton *)btn
 {
-    [[SliderViewController sharedSliderController].navigationController popViewControllerAnimated:YES];
+    [[SliderViewController sharedSliderController].navigationController popToRootViewControllerAnimated:YES];
+    [[SliderViewController sharedSliderController] showLeftViewController];
 }
 
 -(void) initWebView{
